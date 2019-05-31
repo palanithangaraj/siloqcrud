@@ -1,6 +1,6 @@
 {
   "port": "5000",
-  "preLog": "SILOQ - siloqcrud - ",
+  "preLog": "Siloq - siloqcrud - ",
   "secret": "siloqcrud",
   "log-level": "trace"
 }

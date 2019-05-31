@@ -10,8 +10,15 @@ type DataStore interface {
 	ReadJoke(name *model.Name, joke *model.Joke) string
 }
 
+//Receiver and handler for all database operations.
 type Dao struct {
+	//TODO: add session context
+        //databaseName   string
+        collectionName string
+}
 
+func init() {
+	//TODO: Init db connections, session here.
 }
 
 //Just mimics the DB layer
@@ -21,6 +28,7 @@ func (dao *Dao) ReadJoke(name *model.Name, joke *model.Joke) string {
 	}
 
 	s:=fmt.Sprintf("%s %s's %s", name.Name, name.Surname, joke.Value.Joke)
+	//TODO: handle db crud here as appropriate
 	log.Info(s)
 	return fmt.Sprintf(s)
 }

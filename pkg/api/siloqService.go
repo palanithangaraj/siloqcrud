@@ -27,7 +27,7 @@ func HealthCheck(w http.ResponseWriter, r *http.Request) {
 func GetNamedJoke(dao db.DataStore, config config.Config) http.Handler {
 	//TODO: Additional validations
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		defer r.Body.Close()
+		//defer r.Body.Close()
 		pipe := make(chan []byte)
 		http.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}
 		client := apiclient.ApiClient{UserAgent: fmt.Sprintf("siloq Service"), HttpClient: http.DefaultClient}
