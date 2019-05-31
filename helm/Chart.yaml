@@ -1,0 +1,13 @@
+apiVersion: v1
+description: A Helm chart for Kubernetes deployment of siloqcrud
+name: siloqcrud
+version: v0.1.0
+keywords:
+  - siloqcrud #enter keywords that relate to the project
+  - iapi
+  - api
+home: "https://"
+sources:
+  - "http://"
+maintainers:
+  - name: iapi team

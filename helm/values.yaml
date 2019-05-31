@@ -1,0 +1,30 @@
+replicaCount: 2
+image:
+  repository: docker.io/tpalanisamy/siloqcrud
+  tag: v0.1.0
+  pullPolicy: Always
+service:
+  name: siloqcrud
+  type: LoadBalancer
+  externalPort: 80
+  internalPort: 5000
+resources:
+  limits:
+    cpu: 150m
+    memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+metadata:
+  namespace: iapi
+  liveliness:
+    initialDelaySeconds: 10
+    periodSeconds: 10
+    timeoutSeconds: 1
+  readiness:
+    initialDelaySeconds: 10
+    periodSeconds: 10
+    timeoutSeconds: 1
+ingress:
+    env: dev-iapi
+    domain: apollovideotechnology.com

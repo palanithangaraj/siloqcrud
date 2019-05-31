@@ -1,0 +1,7 @@
+FROM golang:alpine
+COPY . /go/src/siloqcrud
+WORKDIR /go/src/siloqcrud/cmd/svr
+RUN apk add --no-cache --virtual .build-deps git; \
+  go get -d -v; \
+  go install -v; \
+  go build -o siloqcrud;

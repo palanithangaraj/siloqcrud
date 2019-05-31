@@ -1,0 +1,46 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ .Values.service.name }}
+  namespace: {{ .Values.metadata.namespace }}
+  labels:
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+spec:
+  replicas: {{ .Values.replicaCount }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.service.name }}
+    spec:
+      containers:
+      - name: {{ .Chart.Name }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - containerPort: {{ .Values.service.internalPort }}
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: {{ .Values.service.internalPort }}
+          initialDelaySeconds: {{ .Values.metadata.liveliness.initialDelaySeconds }}
+          timeoutSeconds: {{ .Values.metadata.liveliness.timeoutSeconds }}
+          periodSeconds: {{ .Values.metadata.liveliness.periodSeconds }}
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: {{ .Values.service.internalPort }}
+          initialDelaySeconds: {{.Values.metadata.readiness.initialDelaySeconds}}
+          timeoutSeconds: {{ .Values.metadata.readiness.timeoutSeconds }}
+          periodSeconds: {{.Values.metadata.readiness.periodSeconds}}
+        resources:
+{{ toYaml .Values.resources | indent 10 }}
+        volumeMounts:
+        - mountPath: /root/config.json
+          name: config
+          subPath: config.json
+      volumes:
+      - name: config
+        secret:
+          secretName: {{ .Values.service.name }}
+      imagePullSecrets:
+        - name: regsecret

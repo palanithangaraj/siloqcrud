@@ -1,0 +1,12 @@
+mode: set
+siloqcrud/pkg/api/siloqService.go:22.58,25.2 2 1
+siloqcrud/pkg/api/siloqService.go:27.72,29.71 1 0
+siloqcrud/pkg/api/siloqService.go:29.71,34.31 5 0
+siloqcrud/pkg/api/siloqService.go:42.3,58.56 12 0
+siloqcrud/pkg/api/siloqService.go:63.3,65.16 3 0
+siloqcrud/pkg/api/siloqService.go:34.31,36.4 1 0
+siloqcrud/pkg/api/siloqService.go:58.56,62.4 3 0
+siloqcrud/pkg/api/siloqService.go:69.68,76.16 7 0
+siloqcrud/pkg/api/siloqService.go:76.16,78.3 1 0
+siloqcrud/pkg/api/siloqService.go:82.68,84.2 1 1
+siloqcrud/pkg/api/siloqService.go:87.76,92.2 4 1
