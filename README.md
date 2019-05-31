@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Apple CRUD API
 ## Description
 The Apple CRUD API: Web service which combines two existing web services.
@@ -85,6 +84,3 @@ There are 7 modes of logging available ranging from "trace" (most complete) to "
         case PanicLevel:
                 return "panic"
 ```
-=======
-# siloqcrud
->>>>>>> 2823590ed8f84d47ae2c12a9fe171240ea7204e0
