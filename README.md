@@ -1,6 +1,6 @@
-# Apple CRUD API
+# Siloq® CRUD API
 ## Description
-The Apple CRUD API: Web service which combines two existing web services.
+The Siloq® CRUD API: Web service which combines two existing web services.
 1. Fetch a random name from http://uinames.com/api/
 2. Fetch a random Chuck Norris joke from http://api.icndb.com/jokes/random?
 firstName=John&lastName=Doe&limitTo=[nerdy]
